@@ -179,5 +179,20 @@ namespace QRCodeTool
                 MessageBox.Show(String.Format("解析图片时出错。\r\n错误类型：{0}\r\n错误信息：{1}", ex.GetType(), ex.Message), "错误", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        /// <summary>在二维码上绘制标志。</summary>
+        private Bitmap CreateQRCodeBitmapWithPortrait(Bitmap qrCode, Bitmap logo)
+        {
+            var bmp = qrCode.Clone() as Bitmap;
+            Graphics g = Graphics.FromImage(bmp);
+
+            // 设置头像要显示的位置，即居中显示
+            int rectX = ((int)this.imgQrcode.Width - logo.Width) / 2;
+            int rectY = ((int)this.imgQrcode.Height - logo.Height) / 2;
+            g.DrawImage(logo, rectX, rectY);
+
+            g.Dispose();
+            return bmp;
+        }
     }
 }
