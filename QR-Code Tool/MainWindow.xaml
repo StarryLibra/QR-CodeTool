@@ -42,7 +42,11 @@
                     </ComboBox>
                     <TextBlock HorizontalAlignment="Left" Margin="10,191,0,0" Text="标志文件" VerticalAlignment="Top" RenderTransformOrigin="0.5,2.822"/>
                     <TextBox x:Name="txtLogoFile" HorizontalAlignment="Left" Height="24" Margin="73,186,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="354"/>
-                    <Button x:Name="btnLogo" Content="文件" HorizontalAlignment="Left" Margin="432,187,0,0" VerticalAlignment="Top" Width="28" Height="23" Click="btnLogo_Click" RenderTransformOrigin="0.321,0.087"/>
+                    <Button x:Name="btnLogo" Background="White" HorizontalAlignment="Left" Margin="432,187,0,0" VerticalAlignment="Top" Width="28" Height="24" Click="btnLogo_Click" RenderTransformOrigin="0.321,0.087">
+                        <Button.Content>
+                            <Image Source="open.png"/>
+                        </Button.Content>
+                    </Button>
                     <Button x:Name="btnGen" Content="生成" HorizontalAlignment="Left" Margin="414,328,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="btnGen_Click"/>
 
                     <StackPanel Background="#FFFFFFE1" Grid.Column="1">
