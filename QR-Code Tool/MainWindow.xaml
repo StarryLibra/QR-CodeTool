@@ -14,7 +14,7 @@
                     <TextBlock HorizontalAlignment="Left" Margin="34,31,0,0" Text="内容" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtMessage" HorizontalAlignment="Left" Height="107" Margin="73,31,0,0" Padding="3,3,3,3" TextWrapping="Wrap" VerticalAlignment="Top" Width="416">
                         <TextBox.Resources>
-                            <VisualBrush x:Key="HelpBrush" TileMode="None" Opacity="0.3" Stretch="None" AlignmentX="Center" AlignmentY="Center">
+                            <VisualBrush x:Key="txtMessageHelpBrush" TileMode="None" Opacity="0.3" Stretch="None" AlignmentX="Center" AlignmentY="Center">
                                 <VisualBrush.Visual>
                                     <TextBlock Text="请输入生成二维码的字符串"/>
                                 </VisualBrush.Visual>
@@ -24,10 +24,10 @@
                             <Style TargetType="TextBox">
                                 <Style.Triggers>
                                     <Trigger Property="Text" Value="{x:Null}">
-                                        <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
+                                        <Setter Property="Background" Value="{StaticResource txtMessageHelpBrush}"/>
                                     </Trigger>
                                     <Trigger Property="Text" Value="">
-                                        <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
+                                        <Setter Property="Background" Value="{StaticResource txtMessageHelpBrush}"/>
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
@@ -41,12 +41,16 @@
                         <ComboBoxItem Content="H级 (约30%容错率)" Tag="H"/>
                     </ComboBox>
                     <TextBlock HorizontalAlignment="Left" Margin="10,191,0,0" Text="标志文件" VerticalAlignment="Top" RenderTransformOrigin="0.5,2.822"/>
-                    <TextBox x:Name="txtLogoFile" HorizontalAlignment="Left" Height="24" Margin="73,186,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="354"/>
+                    <TextBox x:Name="txtLogoFile" HorizontalAlignment="Left" Height="24" Margin="73,186,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="354"/>
                     <Button x:Name="btnLogo" Background="White" HorizontalAlignment="Left" Margin="432,187,0,0" VerticalAlignment="Top" Width="28" Height="24" Click="btnLogo_Click" RenderTransformOrigin="0.321,0.087">
                         <Button.Content>
                             <Image Source="open.png"/>
                         </Button.Content>
                     </Button>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,229,0,0" Text="深色颜色" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtDeepColor" HorizontalAlignment="Left" Height="24" Margin="73,224,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="82" Text="#ff000000"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,268,0,0" Text="浅色颜色" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtLightColor" HorizontalAlignment="Left" Height="24" Margin="73,263,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="82" Text="#ffffffff"/>
                     <Button x:Name="btnGen" Content="生成" HorizontalAlignment="Left" Margin="414,328,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="btnGen_Click"/>
 
                     <StackPanel Background="#FFFFFFE1" Grid.Column="1">

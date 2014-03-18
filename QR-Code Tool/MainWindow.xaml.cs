@@ -62,9 +62,15 @@ namespace QRCodeTool
                 hints.Add(EncodeHintType.ERROR_CORRECTION, errCorrLvl);
                 var matrix = new MultiFormatWriter().encode(this.txtMessage.Text, BarcodeFormat.QR_CODE, (int)this.imgQrcode.Width, (int)this.imgQrcode.Height, hints);
                 var bitmap = new Bitmap(matrix.Width, matrix.Height, PixelFormat.Format32bppArgb);
+                var deepColor = ColorTranslator.FromHtml("0xff000000");
+                var lightColor = ColorTranslator.FromHtml("0xffffffff");
+                if (!String.IsNullOrWhiteSpace(this.txtDeepColor.Text))
+                    deepColor = ColorTranslator.FromHtml("0x"+this.txtDeepColor.Text.TrimStart('#'));
+                if (!String.IsNullOrWhiteSpace(this.txtLightColor.Text))
+                    lightColor = ColorTranslator.FromHtml("0x" + this.txtLightColor.Text.TrimStart('#'));
                 for (int x = 0; x < matrix.Width; x++)
                     for (int y = 0; y < matrix.Height; y++)
-                        bitmap.SetPixel(x, y, matrix[x, y] ? ColorTranslator.FromHtml("0xff000000") : ColorTranslator.FromHtml("0xffffffff"));
+                        bitmap.SetPixel(x, y, matrix[x, y] ? deepColor : lightColor);
 
                 // 添加标志
                 if (!String.IsNullOrWhiteSpace(this.txtLogoFile.Text))
