@@ -22,6 +22,18 @@ namespace QRCodeTool
             InitializeComponent();
         }
 
+        private void txtLogoFile_PreviewDragOver(object sender, DragEventArgs e)
+        {
+            e.Effects = DragDropEffects.Move;
+            e.Handled = true;
+        }
+
+        private void txtLogoFile_PreviewDrop(object sender, DragEventArgs e)
+        {
+            var dropData = e.Data.GetData(DataFormats.FileDrop);
+            this.txtLogoFile.Text = (dropData as string[])[0];
+        }
+
         private void btnLogo_Click(object sender, RoutedEventArgs e)
         {
             var dlg = new OpenFileDialog()

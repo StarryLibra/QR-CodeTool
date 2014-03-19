@@ -41,7 +41,7 @@
                         <ComboBoxItem Content="H级 (约30%容错率)" Tag="H"/>
                     </ComboBox>
                     <TextBlock HorizontalAlignment="Left" Margin="10,191,0,0" Text="标志文件" VerticalAlignment="Top" RenderTransformOrigin="0.5,2.822"/>
-                    <TextBox x:Name="txtLogoFile" HorizontalAlignment="Left" Height="24" Margin="73,186,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="354"/>
+                    <TextBox x:Name="txtLogoFile" HorizontalAlignment="Left" Height="24" Margin="73,186,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="354" PreviewDragOver="txtLogoFile_PreviewDragOver" PreviewDrop="txtLogoFile_PreviewDrop"/>
                     <Button x:Name="btnLogo" Background="White" HorizontalAlignment="Left" Margin="432,187,0,0" VerticalAlignment="Top" Width="28" Height="24" Click="btnLogo_Click" RenderTransformOrigin="0.321,0.087">
                         <Button.Content>
                             <Image Source="open.png"/>
@@ -74,7 +74,7 @@
                     <StackPanel Background="#FFFFFFE1">
                         <Button x:Name="btnRead" Content="读取文件" HorizontalAlignment="Left" Margin="92,28,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="btnRead_Click"/>
                         <Border Background="White" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="176" Margin="45,24,0,0" VerticalAlignment="Top" Width="176">
-                            <Image x:Name="imgPhoto" HorizontalAlignment="Center" Height="175" VerticalAlignment="Center" Width="175"/>
+                            <Image x:Name="imgPhoto" AllowDrop="True" HorizontalAlignment="Center" Height="175" VerticalAlignment="Center" Width="175"/>
                         </Border>
                     </StackPanel>
 
