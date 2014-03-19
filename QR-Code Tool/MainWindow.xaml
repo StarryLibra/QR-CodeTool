@@ -74,7 +74,7 @@
                     <StackPanel Background="#FFFFFFE1">
                         <Button x:Name="btnRead" Content="读取文件" HorizontalAlignment="Left" Margin="92,28,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="btnRead_Click"/>
                         <Border Background="White" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="176" Margin="45,24,0,0" VerticalAlignment="Top" Width="176">
-                            <Image x:Name="imgPhoto" AllowDrop="True" HorizontalAlignment="Center" Height="175" VerticalAlignment="Center" Width="175"/>
+                            <Image x:Name="imgPhoto" AllowDrop="True" HorizontalAlignment="Left" Height="175" VerticalAlignment="Top" Width="175"/>
                         </Border>
                     </StackPanel>
 
